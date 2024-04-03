@@ -5,15 +5,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = $_POST["subject"];
     $message = $_POST["message"];
 
-    $to = "kogulkomi@gmail.com"; // Your email address
+    $to = "kogulkomi@gmail.com"; 
     $headers = "From: $email";
 
-    $success = mail($to, $subject, $message, $headers);
-
-    if ($success) {
-        echo "Email sent successfully.";
+    if (mail($to, $subject, $message, $headers)) {
+        echo "Message sent successfully.";
     } else {
-        echo "Failed to send email.";
+        echo "Error sending message.";
     }
 }
 ?>

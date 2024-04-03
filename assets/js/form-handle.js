@@ -1,30 +1,13 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var myForm = document.getElementById("myForm");
-
-  myForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    var nameInput = document.getElementById("name");
-    var emailInput = document.getElementById("email");
-    var subjectInput = document.getElementById("subject");
-    var messageInput = document.getElementById("message");
-
-    var name = nameInput.value;
-    var email = emailInput.value;
-    var subject = subjectInput.value;
-    var message = messageInput.value;
-
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Subject:", subject);
-    console.log("Message:", message);
-
-    nameInput.value = "";
-    emailInput.value = "";
-    subjectInput.value = "";
-    messageInput.value = "";
-
-    // Redirect to the home page
-    window.location.href = "index.html";
+document.getElementById("myForm").addEventListener("submit", function (event) {
+	event.preventDefault(); 
+  
+	// Display confirmation message
+	document.getElementById("confirmation-message").style.display = "block";
+  
+	// Clear form fields
+	document.getElementById("name").value = "";
+	document.getElementById("email").value = "";
+	document.getElementById("subject").value = "";
+	document.getElementById("message").value = "";
   });
-});
+  

@@ -31,7 +31,7 @@
           <h2>Contact Me</h2>
         </header>
         <div class="box">
-          <form id="myForm" method="post" action="#">
+          <form id="myForm" method="post" action="contact.php">
             <div class="row gtr-50 gtr-uniform">
               <div class="col-6 col-12-mobilep">
                 <input
@@ -49,6 +49,8 @@
                   id="email"
                   value=""
                   placeholder="Email"
+                  required
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                 />
               </div>
               <div class="col-12">
@@ -110,6 +112,9 @@
         </div>
       </footer>
     </div>
+    <div id="confirmation-message" style="display: none">
+      Message sent successfully. Thank you!
+    </div>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
@@ -119,6 +124,5 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="/assets/js/form-handle.js"></script>
   </body>
 </html>
