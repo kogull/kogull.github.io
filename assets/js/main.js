@@ -49,11 +49,11 @@
       visibleClass: "navPanel-visible",
     });
 
-  // Header.
+  // Header
   if (!browser.mobile && $header.hasClass("alt") && $banner.length > 0) {
     $window.on("load", function () {
       $banner.scrollex({
-        bottom: $header.outerHeight(),
+        bottom: 800,
         terminate: function () {
           $header.removeClass("alt");
         },
