@@ -2540,6 +2540,7 @@ input[type="radio"] + label:before {
   border: 0;
   display: inline-block;
   position: relative;
+  left: 2em;
 }
 
 .image img {
