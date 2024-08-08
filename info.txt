@@ -4,3 +4,13 @@ home lab
 after recently building a new pc I had an extra pc laying aroiund so I took this opportunity to start a home lab
 promox was my chosen hypervisor to in starting my lab which was around month long process in getting configured properly. makeing sure the old drives were backed up and prepared. acquiring new drives. configuring my default router. finding an appropriate location. 
 
+after successfully installing proxmox first this was to configure the storage through network attached solution. I chose trueNAS. setup here was almost straight forward. creates a container and after the trueNAS image and logged in through the web ui. I only have. one main hdd so currently there is no form of redundancy. 
+
+next was a file/media server which connected to my nas for storage. setup was initially confusing however playing around made it clear. Jellyfin was application I chose to host this. Overall set was straightforward. Additionally my pc had a graphics cards which I intended to use for hardware acceleration and after some playing around and attempted configuration I found that my motherboard was not compatible due no support for VT-d with my CPU. I have since chosen to to use Quicksync functionality which should suffice. 
+
+lastly was a docker setup as  means for other smaller projects such as a game servers or cybersecurity labs. set up here was not quite straight forward and I'm still working towards finding the right configuration
+
+items I wish to add
+VPN. to access my server remotely 
+Pi hole. to manage ads through a. DNS server 
+Game Servers. 
