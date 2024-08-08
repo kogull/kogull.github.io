@@ -1,0 +1,6 @@
+home lab
+
+
+after recently building a new pc I had an extra pc laying aroiund so I took this opportunity to start a home lab
+promox was my chosen hypervisor to in starting my lab which was around month long process in getting configured properly. makeing sure the old drives were backed up and prepared. acquiring new drives. configuring my default router. finding an appropriate location. 
+
