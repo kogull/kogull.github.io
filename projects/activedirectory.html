@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kogul's Portfolio</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  </head>
+  <body class="landing is-preload">
+    <div id="page-wrapper">
+      <!-- Header -->
+      <header id="header" class="alt">
+        <h1><a href="index.html">Kogul's Portfolio</a></h1>
+        <nav id="nav">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../projects.html">Projects</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="mailto:kogulkomi@gmail.com" class="button">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Banner -->
+      <section id="banner">
+        <h2>Active Directory</h2>
+      </section>
+
+      <!-- Main -->
+      <section id="main" class="container">
+
+        <section class="container">
+          <div class="col-6 col-12-narrower">
+            <section class="box special column">
+              <div>
+                <h3>Procedure</h3>
+                <p>
+                  <strong>1. Preparing the Hardware</strong><br>
+                  - Install the new hard drive by opening the computer case, mounting the drive, connecting the SATA and power cables, and closing the case.<br><br>
+                  
+                  <strong>2. Installing Proxmox</strong><br>
+                  - Download the Proxmox ISO file from the official website.<br>
+                  - Create a bootable USB drive using software like Rufus.<br>
+                  - Boot the computer from the USB drive and follow the on-screen instructions to install Proxmox.<br>
+                  - Configure the network settings and create a Proxmox cluster if needed.<br><br>
+                  
+                  <strong>3. Setting Up Virtual Machines</strong><br>
+                  - Create a TrueNAS VM in the Proxmox web interface, allocate resources, attach the TrueNAS ISO, and install TrueNAS.<br>
+                  - Create a Docker VM, allocate resources, and install a Linux distribution (e.g., Ubuntu) on the Docker VM.<br><br>
+                  
+                  <strong>4. Installing Docker and Portainer</strong><br>
+                  - SSH into the Docker VM and run the following commands to install Docker:<br>
+                  <code>
+                    sudo apt update<br>
+                    sudo apt install docker-ce docker-ce-cli containerd.io
+                  </code><br>
+                  - Install Portainer by running the following command:<br>
+                  <code>
+                    sudo docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+                  </code><br>
+                  - Access Portainer via <code>http://<Docker_VM_IP>:9000</code> and complete the setup.<br><br>
+                  
+                  <strong>5. Installing Jellyfin</strong><br>
+                  - In Portainer, navigate to the "Containers" section, click "Add Container", and configure the Jellyfin container with the following settings:<br>
+                  - Image: <code>jellyfin/jellyfin</code><br>
+                  - Ports: Map the container port <code>8096</code> to a host port.<br>
+                  - Volumes: Map the media library path to a host directory.<br>
+                  - Click "Deploy the container".
+                </p>
+              </div>
+            </section>
+          </div>
+        </section>
+      </section>
+
+
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-logo">
+              <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+              </a>
+            </div>
+            <div class="footer-links">
+              <ul>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="mailto:kogulkomi@gmail.com">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-social">
+              <ul>
+                <li>
+                  <a href="https://github.com/kogull" target="_blank">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-info">
+            <p>&copy;2024 Kogul Komi. All rights reserved</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
