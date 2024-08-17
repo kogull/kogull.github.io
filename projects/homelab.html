@@ -38,40 +38,52 @@
           <div class="col-6 col-12-narrower">
             <section class="box special column">
               <div>
+                <h3>Introduction</h3>
+                <p>
+                    After recently building a new PC, I found myself with an extra one lying around. I took this opportunity to start a home lab. 
+                    Proxmox was my chosen hypervisor, and setting up my lab was a month-long process that involved configuring everything properly. 
+                    This included backing up and preparing old drives, acquiring new drives, configuring my default router, and finding an appropriate location.
+                </p>
+
+                <h3>Skills</h3>
+                <ul>
+                    <li><strong>PC Building:</strong> Experience in assembling and configuring PCs.</li>
+                    <li><strong>Hypervisors:</strong> Proficient in using Proxmox for virtualization.</li>
+                    <li><strong>Network Attached Storage (NAS):</strong> Skilled in setting up and configuring TrueNAS.</li>
+                    <li><strong>Media Servers:</strong> Experience with Jellyfin for hosting media content.</li>
+                    <li><strong>Hardware Acceleration:</strong> Knowledge of using graphics cards and Quicksync for hardware acceleration.</li>
+                    <li><strong>Docker:</strong> Familiar with setting up and configuring Docker for various projects.</li>
+                    <li><strong>Networking:</strong> Configuring routers and managing network settings.</li>
+                    <li><strong>Troubleshooting:</strong> Strong problem-solving skills and the ability to troubleshoot hardware and software issues.</li>
+                </ul>
+
                 <h3>Procedure</h3>
                 <p>
-                  <strong>1. Preparing the Hardware</strong><br>
-                  - Install the new hard drive by opening the computer case, mounting the drive, connecting the SATA and power cables, and closing the case.<br><br>
-                  
-                  <strong>2. Installing Proxmox</strong><br>
-                  - Download the Proxmox ISO file from the official website.<br>
-                  - Create a bootable USB drive using software like Rufus.<br>
-                  - Boot the computer from the USB drive and follow the on-screen instructions to install Proxmox.<br>
-                  - Configure the network settings and create a Proxmox cluster if needed.<br><br>
-                  
-                  <strong>3. Setting Up Virtual Machines</strong><br>
-                  - Create a TrueNAS VM in the Proxmox web interface, allocate resources, attach the TrueNAS ISO, and install TrueNAS.<br>
-                  - Create a Docker VM, allocate resources, and install a Linux distribution (e.g., Ubuntu) on the Docker VM.<br><br>
-                  
-                  <strong>4. Installing Docker and Portainer</strong><br>
-                  - SSH into the Docker VM and run the following commands to install Docker:<br>
-                  <code>
-                    sudo apt update<br>
-                    sudo apt install docker-ce docker-ce-cli containerd.io
-                  </code><br>
-                  - Install Portainer by running the following command:<br>
-                  <code>
-                    sudo docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
-                  </code><br>
-                  - Access Portainer via <code>http://<Docker_VM_IP>:9000</code> and complete the setup.<br><br>
-                  
-                  <strong>5. Installing Jellyfin</strong><br>
-                  - In Portainer, navigate to the "Containers" section, click "Add Container", and configure the Jellyfin container with the following settings:<br>
-                  - Image: <code>jellyfin/jellyfin</code><br>
-                  - Ports: Map the container port <code>8096</code> to a host port.<br>
-                  - Volumes: Map the media library path to a host directory.<br>
-                  - Click "Deploy the container".
+                    <strong>1. Preparing the Hardware</strong><br>
+                    - Install the new hard drive by opening the computer case, mounting the drive, connecting the SATA and power cables, and closing the case.
                 </p>
+                
+                <p>
+                    <strong>Proxmox Installation</strong><br>
+                    After successfully installing Proxmox, the first task was to configure the storage through a network-attached solution. I chose TrueNAS for this purpose. The setup was almost straightforward. I created a container, installed the TrueNAS image, and logged in through the web UI. Currently, I only have one main HDD, so there is no form of redundancy.
+                </p>
+                
+                <p>
+                    <strong>File/Media Server Setup</strong><br>
+                    Next, I set up a file/media server that connected to my NAS for storage. The initial setup was confusing, but after some experimentation, it became clear. I chose Jellyfin to host this. Overall, the setup was straightforward. Additionally, my PC had a graphics card that I intended to use for hardware acceleration. However, after some experimentation, I found that my motherboard was not compatible due to no support for VT-d with my CPU. I have since chosen to use Quicksync functionality, which should suffice.
+                </p>
+                
+                <p>
+                    <strong>Docker Setup</strong><br>
+                    Lastly, I set up Docker for other smaller projects, such as game servers or software testing senarios. The setup was not quite straightforward, and I’m still working towards finding the right configuration.
+                </p>
+                
+                <h3>Future Plans</h3>
+                <ul>
+                    <li><strong>VPN:</strong> To access my server remotely.</li>
+                    <li><strong>Pi-hole:</strong> To manage ads through a DNS server.</li>
+                    <li><strong>Game Servers:</strong> For hosting various games.</li>
+                </ul>
               </div>
             </section>
           </div>
