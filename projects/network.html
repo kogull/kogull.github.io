@@ -35,22 +35,97 @@
       <section id="main" class="container">
 
         <section class="container">
+          
           <div class="col-6 col-12-narrower">
             <section class="box special column">
               <div>
                 <h3>Introduction</h3>
-                <p>I use this page as a space to </p>
+                <h4>I use this page as a space to remind myself on concepts that I found difficult while learning networking. </h4>
               </div>
             </section>
+            
+            <section class="box special">
+              <h2>OSI Model</h2>
+              <div class="column">
+                <section class="box special" style="text-align: left;">
+                  <p></p>
+                  <h4 style="font-weight: bold;">Application Layer</h4>
+                  <p>Purpose: Provides network services directly to end-users and applications.
+                  <br>Examples: HTTP, FTP, SMTP, and other application protocols.</p>
+                  <h4 style="font-weight: bold;">Presentation Layer</h4>
+                  <p>Purpose: Translates, encrypts, or compresses data for the Application layer.
+                  <br>Examples: Data encryption, character encoding, data compression.</p>
+                  <h4 style="font-weight: bold;">Session Layer</h4>
+                  <p>Purpose: Manages sessions or connections between applications.
+                  <br>Examples: APIs, session establishment and management.</p>
+                  <h4 style="font-weight: bold;">Transport Layer</h4>
+                  <p>Purpose: Ensures complete data transfer and error recovery.
+                  <br>Examples: TCP (Transmission Control Protocol), UDP (User Datagram Protocol).</p>
+                  <h4 style="font-weight: bold;">Network Layer</h4>
+                  <p>Purpose: Manages logical addressing and routing of data across the network.
+                  <br>Examples: IP addresses, routers.</p>
+                  <h4 style="font-weight: bold;">Data Link Layer</h4>
+                  <p>Purpose: Provides node-to-node data transfer and handles error correction from the Physical layer.
+                  <br>Examples: Ethernet, MAC addresses, and switches.</p>
+                  <h4 style="font-weight: bold;">Physical Layer</h4>
+                  <p>Purpose: Transmits raw bitstreams over a physical medium.
+                  <br>Examples: Cables, switches, and the physical aspects of network devices.</p>
+                  
+                  
+                </section>
+                <section class="special" style="text-align: left;">
+                  <h4>Data Encapsulation</h4>
+                  <p>As data is being sent from on computer to another it undergoes a process called <strong>Encapsulation</strong>.
+                  The Application, Presentation and Session layer provide data for the Transport layer where headers and trailers are added to the data.
+                  <br><br>
+                  <strong>Segmentation</strong>
+                  <br>Once the data is received, the transport layer breaks the data into smaller pieces and creates and attaches a header for each piece with information about reassembly. This is known as a segment and is then sent to the Network Layer.
+                  <br><strong>Packet</strong>
+                  <br> A header is then created for the segment with addressing and routing information and once attached this becomes packet.
+                  <br><strong>Frame</strong>
+                  <br> Packets are then given a header and a trailer by the data link layer called a frame. Headers have information regarding switching requirements while the trailer is used to detect and drop corrupt data during de-encapsulation
+                  <br><strong>Bits</strong>
+                  <br> Frames are then converted into required medium for physical layer to send such as signals or voltage.
+                  
+                  <h4>De-Capsulation</h4>
+                  <p>At the receiving computer the process is reversed as each layer uses the attached header/trailer to move the data through each layer.</p>
+                  
+                  
+                  <h4>TCP/IP Model</h4>
+                  <p>
+                    Similar to the OSI Model, the TCP/IP Model consists of four layers, <strong> Application, Transport, Internet and Link</strong>.
+                    This is done by combining layers together to be simpler and more practical when reflecting protocols such as TCP and IP, emphasising end-to-end communication.
+                    <br>
+                  </p>
+                  </section>
+                
+              </div>
+            </section>
+            
+            
             <section class="box special column">
               <div>
                 <h3>Subnetting</h3>
-                <p>I use this page as a space to </p>
-                <h3>Procedure</h3>
-                <p>
-                  <strong>1. Preparing the Hardware</strong><br>
-                  - Install the new hard drive by opening the computer case, mounting the drive, connecting the SATA and power cables, and closing the case.<br><br>
-                </p>
+                <p>Subnetting is the process of dividing a larger network into smaller, more manageable sub-networks (subnets). 
+                  This improves performance and security by isolating network segments.</p>
+
+                <section class="box">
+                  <h3>Steps for Subnetting:</h3>
+                  <ol>
+                    <li>
+                      Determine the Number of Required Subnets: Decide how many subnets you need.
+                    </li>
+                    <li>
+                      Calculate the Subnet Mask: Adjust the subnet mask to create the necessary number of subnets.
+                    </li>
+                    <li>
+                      Divide the IP Address Range: Allocate the IP ranges for each subnet.
+                    </li>
+                    <li>
+                      Assign IP Ranges: Assign ranges to devices within each subnet.
+                    </li>
+                  </ol>
+                </section>
               </div>
             </section>
           </div>
