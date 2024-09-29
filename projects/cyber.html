@@ -41,13 +41,8 @@
               <div>
                 <h3>Introduction</h3>
                 <p>Welcome to the Overview of Cyber-Lab</p>
-                <h3>Procedure</h3>
-                <p>
-                  <strong>1. pfSense Firewall Build</strong><br>
-                  <strong>2. Kali Linux Build & Firewall Rules</strong><br>
-                  <strong>3. Ubuntu, Docker and Portainer Build</strong><br>
-                  <strong>4. Metasploitable 2</strong><br>
-                </p>
+                <h4>Technologies included:</h4>
+                <p>pfSense, Kali Linux, Windows, Docker, Portainer, Metasploitable, Proxmox</p>
               </div>
             </section>
             <section class="box">
@@ -59,6 +54,90 @@
               </div>
             </section>
             
+            <section class="box">
+              <div>
+                <h2>Lab Setup Instructions</h2>
+                <h3>Plan</h3>
+                <ol>
+                    <li>Installing <strong>pfSense Firewall</strong></li>
+                    <li><strong>Kali Linux</strong> for managing the firewall and conducting attacks</li>
+                    <li><strong>Docker and Portainer</strong> for running vulnerable applications</li>
+                    <li><strong>Metasploitable 2</strong> as a vulnerable machine</li>
+                </ol>
+            </section>
+            
+            <!-- Overview -->
+            <section class="box">
+              <h3>Setup Overview</h3>
+            </section> 
+            
+            <!-- pfSense -->
+            <section class="box">
+              <h4>1. Configure pfSense Firewall</h4>
+              <p><strong>Purpose:</strong> Control and monitor all traffic within your lab network.</p>
+              <p><strong>Instructions:</strong> Follow pfSense documentation to set up basic configurations such as interfaces, firewall rules, and NAT.</p>
+              <ol>
+                  <li>Obtain pfSense ISO from the website</li>
+                  <li>Create a VM and install</li>
+              </ol>
+              <h5>pfSense Configuration</h5>
+              <span class="image">
+                  <img src="/images/pfsense.png" alt="pfSense Configuration" style="width: 100%; height: 100%;" />
+              </span>
+            </section> 
+
+            <!-- Kali Linux -->
+            <section class="box">
+              <h4>2. Install Kali Linux</h4>
+              <p><strong>Purpose:</strong> Use Kali Linux as the main attack machine and for managing the pfSense firewall.</p>
+              <p><strong>Instructions:</strong> Ensure Kali Linux is properly networked with pfSense and other lab components.</p>
+              <ol>
+                  <li>Obtain Kali ISO from the Kali website</li>
+                  <li>Create a VM and install</li>
+                  <li>Test connection to the internet</li>
+              </ol>
+              <h5>Kali Linux Test</h5>
+              <span class="image">
+                  <img src="/images/kalitest.png" alt="Kali Linux Test" style="width: 100%; height: 100%;" />
+              </span>
+            </section> 
+
+            <!-- Docker and Portainer -->
+            <section class="box">
+              <h4>3. Set Up Docker for Vulnerable Applications</h4>
+              <p><strong>Purpose:</strong> Use Docker to run vulnerable applications and services.</p>
+              <p><strong>Instructions:</strong> Install Docker and pull the necessary vulnerable images.</p>
+              <ol>
+                  <li>Create the Docker VM in Proxmox</li>
+                  <li>SSH into Docker VM through Kali</li>
+                  <li>Install Portainer as a Docker container</li>
+                  <li>Manage Portainer through port :9449</li>
+              </ol>
+              <h5>Portainer</h5>
+              <span class="image">
+                  <img src="/images/portssh.png" alt="Portainer SSH Install" style="width: 100%; height: 100%;" />
+              </span>
+              <span class="image">
+                  <img src="/images/portweb.png" alt="Portainer Web GUI" style="width: 100%; height: 100%;" />
+              </span>
+            </section> 
+
+            <!-- Metasploitable 2 -->
+            <section class="box">
+              <h4>4. Install Metasploitable 2</h4>
+              <p><strong>Purpose:</strong> A pre-made vulnerable machine to understand and exploit common vulnerabilities.</p>
+              <p><strong>Instructions:</strong> Ensure Kali Linux is properly networked with pfSense and other lab components.</p>
+              <ol>
+                  <li>Create a VM without an image</li>
+                  <li>SSH into Proxmox, locate the VM files, and add the image to the configuration files</li>
+                  <li>Start the VM and finish configuration</li>
+                  <li>Test the finished install from the Kali machine</li>
+              </ol>
+              <h5>Metasploitable 2 Web Test</h5>
+              <span class="image">
+                  <img src="/images/ms2.png" alt="Metasploitable 2 Web Test" style="width: 100%; height: 100%;" />
+              </span>
+            </section> 
           </div>
         </section>
       </section>
